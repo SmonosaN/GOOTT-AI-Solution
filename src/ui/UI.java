@@ -6,8 +6,8 @@ public class UI {
 	public static void information() {
 		System.out.println("============================");
 		System.out.println("Title: Customer Segmentation");
-		System.out.println("Developer : OOO");
-		System.out.println("Email : OOO");
+		System.out.println("Developers : 노성민, 임태호");
+		System.out.println("Email : bbaktaeho@kakao.com");
 		System.out.println("============================");
 	}
 
