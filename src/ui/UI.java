@@ -11,24 +11,33 @@ public class UI {
 		System.out.println("============================");
 	}
 
-	public static void menu() {
+	public static int mainMenu() {
 		System.out.println("============================");
-		System.out.println("1. 고객 정보 입력");
-		System.out.println("2. 그룹 분류");
-		System.out.println("3. 고객 정보 수정");
+		System.out.println("1. 그룹 설정");
+		System.out.println("2. 고객 정보 입력");
+		System.out.println("3. 그룹별 고객 리스트 조회");
 		System.out.println("4. 종료");
 		System.out.println("============================");
-	}
-
-	public static void menuSelect() {
 		System.out.print("메뉴 번호를 입력하세요 : ");
+		return Input.inputInt(4);
+	}
+	
+	public static String selectGroupMenu() {
+		System.out.println("그룹을 입력하세요 : ");
+		return Input.inputString();
+	}
+	
+	public static int groupSettingMenu() {
+		System.out.println("============================");
+		System.out.println("1. 그룹별 고객 정보 설정 및 수정");
+		System.out.println("2. 그룹별 고객 정보 조회");
+		System.out.println("3. 종료");
+		System.out.println("============================");
+		System.out.print("메뉴 번호를 입력하세요 : ");
+		return Input.inputInt(3);
 	}
 
-	public static void menuSelect2() {
-		System.out.print("메뉴를 입력하세요 : ");
-	}
-
-	public static void menu1() {
+	public static int userSettingMenu() {
 		System.out.println("============================");
 		System.out.println("고객의 정보를 입력합니다.");
 		System.out.println("1. 이름");
@@ -38,6 +47,7 @@ public class UI {
 		System.out.println("5. 온라인 사용 시간");
 		System.out.println("6. 뒤로 가기");
 		System.out.println("============================");
+		return Input.inputInt(6);
 	}
 
 	public static void cusName() {

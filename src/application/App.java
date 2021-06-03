@@ -1,6 +1,5 @@
 package application;
 
-import ui.Input;
 import ui.UI;
 
 public class App {
@@ -8,10 +7,19 @@ public class App {
 	public static void run() {
 		UI.information();
 		while (true) {
-			UI.menu();
-			int select = Input.inputInt();
-			if (select == 4) break;
+			try {
+				int select = UI.mainMenu();
+				switch (select) {
+					case 1: break;
+					case 2: break;
+					case 3: break;
+					case 4: System.out.println("Á¾·á"); break;
+				}
+			} catch(Exception e) {
+				String error = e.getMessage();
+				System.out.println(error);
+				continue;
+			}
 		}
 	}
-	
 }
