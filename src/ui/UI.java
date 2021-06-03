@@ -1,8 +1,6 @@
 package ui;
 
 public class UI {
-	static void showMainUI() {}
-	
 	public static void information() {
 		System.out.println("============================");
 		System.out.println("Title: Customer Segmentation");
@@ -28,8 +26,9 @@ public class UI {
 		return Input.inputString();
 	}
 	
-	public static int groupSettingMenu() {
+	public static int groupSettingMenu(String groupName) {
 		System.out.println();
+		System.out.println("[" + groupName + "]");
 		System.out.println("============================");
 		System.out.println("1. 그룹별 고객 정보 설정 및 수정");
 		System.out.println("2. 그룹별 고객 정보 조회");
@@ -55,14 +54,39 @@ public class UI {
 	public static int userInGroupSettingMenu() {
 		System.out.println();
 		System.out.println("============================");
-		System.out.println("1. 최저 나이");
-		System.out.println("2. 최대 나이");
-		System.out.println("3. 성별");
-		System.out.println("4. 지역");
-		System.out.println("5. 온라인 사용 시간");
-		System.out.println("6. 뒤로 가기");
+		System.out.println("1. 최저 나이와 최대 나이");
+		System.out.println("2. 성별");
+		System.out.println("3. 지역");
+		System.out.println("4. 온라인 사용 시간");
+		System.out.println("5. 뒤로 가기");
 		System.out.println("============================");
-		return Input.inputInt(6);
+		System.out.print("메뉴 번호를 입력하세요 : ");
+		return Input.inputInt(5);
+	}
+	
+	public static int minAgeInGroupMenu() {
+		System.out.print("최저 나이를 입력하세요 : ");
+		return Input.inputInt(100);
+	}
+	
+	public static int maxAgeInGroupMenu() {
+		System.out.print("최대 나이를 입력하세요 : ");
+		return Input.inputInt(100);
+	}
+	
+	public static String genderMenu() {
+		System.out.print("성별을 입력하세요 : ");
+		return Input.inputGenter();
+	}
+	
+	public static String locationMenu() {
+		System.out.print("지역을 입력하세요 : ");
+		return Input.inputLocation();
+	}
+	
+	public static int timeMenu() {
+		System.out.print("온라인 사용 시간을 입력하세요 : ");
+		return Input.inputInt(23);
 	}
 
 	public static void cusName() {

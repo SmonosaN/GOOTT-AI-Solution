@@ -16,6 +16,21 @@ public class User {
 		this.time = time;
 	}
 	
+	public int getId() {
+		return id;
+	}
+	public int getAge() {
+		return age;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public String getLocation() {
+		return location;
+	}
+	public int getTime() {
+		return time;
+	}
 	public void setAge(int age) {
 		this.age = age;
 	}
@@ -34,6 +49,4 @@ public class User {
 				id, age, gender, location, time);
 		System.out.println(user);
 	}
-	
-	
 }

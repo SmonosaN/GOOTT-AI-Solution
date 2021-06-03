@@ -10,19 +10,20 @@ public class SetGroupUseCase {
 	private static void setUserInGroup(Group group) {
 		while (true) {
 			int select = UI.userInGroupSettingMenu();
-			if (select == 1) group.setMinAge(0);
-			if (select == 2) group.setMaxAge(0);
-			if (select == 3) group.setGender(null);
-			if (select == 4) group.setLocation(null);
-			if (select == 5) group.setTime(0);
-			if (select == 6) break;
+			if (select == 1) {
+				group.setMinAge(UI.minAgeInGroupMenu());
+				group.setMaxAge(UI.maxAgeInGroupMenu());
+			}
+			if (select == 2) group.setGender(UI.genderMenu());
+			if (select == 3) group.setLocation(UI.locationMenu());
+			if (select == 4) group.setTime(UI.timeMenu());
+			if (select == 5) break;
 		}
-		
 	}
 	
-	private static void setGroup(Group group) {	
+	private static void setGroup(Group group, String groupName) {	
 		while (true) {
-			int select = UI.groupSettingMenu();
+			int select = UI.groupSettingMenu(groupName);
 			if (select == 1) setUserInGroup(group);
 			if (select == 2) group.showGroup();
 			if (select == 3) break;
@@ -34,15 +35,15 @@ public class SetGroupUseCase {
 			String group = UI.selectGroupMenu();
 			
 			if (group.equals("ideal")) {
-				setGroup(ideal);
+				setGroup(ideal, group);
 				break;
 			}
 			if (group.equals("likely")) {
-				setGroup(likely);
+				setGroup(likely, group);
 				break;
 			}
 			if (group.equals("defect")) {
-				setGroup(defect);
+				setGroup(defect, group);
 				break;
 			}
 			// todo: Input 클래스에서 에러핸들링이 된다면 지울 예정 

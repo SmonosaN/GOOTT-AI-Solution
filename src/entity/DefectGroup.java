@@ -17,7 +17,10 @@ public class DefectGroup extends Group {
 	@Override
 	public void showUserList() {
 		System.out.println("<불량 그룹의 고객 리스트>");
-		if (userList.isEmpty()) return;
+		if (userList.isEmpty()) {
+			System.out.println("비어있음");
+			return;
+		}
 		for (User user : userList) user.showUser();
 	}
 }
