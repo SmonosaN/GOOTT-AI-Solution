@@ -1,9 +1,8 @@
 package application;
 
 import entity.*;
-import ui.UI;
-import usecase.GetGroupUseCase;
-import usecase.SetGroupUseCase;
+import ui.*;
+import usecase.*;
 
 public class App {
 	private IdealGroup ideal; // 이상적인 그룹
@@ -21,14 +20,10 @@ public class App {
 		while (true) {
 			int select = UI.mainMenu();
 			if (select == 1) SetGroupUseCase.execute(ideal, likey, defect);
-			else if (select == 2)
-				// todo: 고객 정보 입력
-				break;
+			else if (select == 2) SetUserUseCase.execute(ideal, likey, defect);
 			else if (select == 3) GetGroupUseCase.execute(ideal, likey, defect);
-			else if (select == 4) {
-				System.out.println("종료");
-				break;
-			}
+			else if (select == 4) break;
 		}
+		System.out.println("프로그램 종료");
 	}
 }

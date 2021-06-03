@@ -38,8 +38,22 @@ public class UI {
 		return Input.inputInt(3);
 	}
 
-	public static int userSettingMenu() {
+	public static int userSettingMenu(int number) {
 		System.out.println();
+		System.out.println(number + " 번째");
+		System.out.println("============================");
+		System.out.println("1. 고객 정보 생성");
+		System.out.println("2. 고객 정보 조회");
+		System.out.println("3. 고객 정보 수정");
+		System.out.println("4. 뒤로 가기");
+		System.out.println("============================");
+		System.out.print("메뉴 번호를 입력하세요 : ");
+		return Input.inputInt(4);
+	}
+	
+	public static int userMenu(int number) {
+		System.out.println();
+		System.out.println(number + " 번째 고객");
 		System.out.println("============================");
 		System.out.println("1. 이름");
 		System.out.println("2. 나이");
@@ -88,6 +102,11 @@ public class UI {
 		System.out.print("온라인 사용 시간을 입력하세요 : ");
 		return Input.inputInt(23);
 	}
+	
+	public static int numOfUserMenu() {
+		System.out.print("고객의 수를 입력하세요 (-1 : 뒤로 가기) : ");
+		return Input.inputInt(Integer.MAX_VALUE);
+	}
 
 	public static void cusName() {
 		System.out.print("고객의 이름을 입력하세요 : ");
@@ -107,30 +126,5 @@ public class UI {
 
 	public static void cusOnline() {
 		System.out.print("고객의 온라인 사용 시간을 입력하세요 : ");
-	}
-	
-	public static void aGroup() {
-		System.out.println("A그룹 입니다.");
-	}
-
-	public static void bGroup() {
-		System.out.println("B그룹 입니다.");
-	}
-
-	public static void cGroup() {
-		System.out.println("C그룹 입니다.");
-	}
-	
-	public static void errGroup() {
-		System.out.println("그룹을 불러올 수 없습니다.");
-		System.out.println("고객의 정보를 먼저 입력해주세요.");
-	}
-
-	public static void insertInfor() {
-		System.out.println("============================");
-		System.out.println("고객의 정보를 수정합니다.");
-		System.out.print("수정할 고객을 선택하세요 : ");
-		System.out.println("0. 뒤로 가기");
-		System.out.println("============================");
 	}
 }
