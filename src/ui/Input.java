@@ -8,7 +8,7 @@ public class Input {
 	public static int inputInt(int max) {
 		try {
 			int input = INPUT.nextInt();
-			if (input < 1 || input > max) throw new Exception("범위"); 
+			if (input < 1 || input > max) throw new Exception("범위는 1부터 "+max+"까지"); 
 			return input;
 		} catch(Exception e) {
 			System.out.println("잘못 입력했습니다. " + e.getMessage());
@@ -17,12 +17,14 @@ public class Input {
 	}
 	
 	public static String inputString() {
-		try {
-			String input = INPUT.nextLine();
-			// todo: 정규표현식으로 ideal, likely, defact 확인하기
-			
-		}catch (Exception e) {
-			
-		}
+		String input = INPUT.next();
+		return input;
+//		try {
+//			String input = INPUT.nextLine();
+//			// todo: 정규표현식으로 ideal, likely, defact 확인하기
+//			return input;
+//		}catch (Exception e) {
+//			return "";
+//		}
 	}
 }
