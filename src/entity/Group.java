@@ -16,26 +16,44 @@ public abstract class Group {
 		this.gender = gender;
 		this.location = location;
 		this.time = time;
+		this.userList = new ArrayList<User>();
 	}
-
 
 	public void setMinAge(int minAge) {
-		this.minAge = minAge;
+		if (minAge < maxAge) this.minAge = minAge;
 	}
-
 	public void setMaxAge(int maxAge) {
-		this.maxAge = maxAge;
+		if (minAge < maxAge) this.maxAge = maxAge;
 	}
-
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-
 	public void setLocation(String location) {
 		this.location = location;
 	}
-	
-    abstract public void showUserList();
-	
+	public ArrayList<User> getUserList() {
+		return userList;
+	}
+	public int getMinAge() {
+		return minAge;
+	}
+	public int getMaxAge() {
+		return maxAge;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public String getLocation() {
+		return location;
+	}
+	public int getTime() {
+		return time;
+	}
+	public void setTime(int time) {
+		this.time = time;
+	}
+
+	abstract public void showUserList();
+
 	abstract public void showGroup();
 }
