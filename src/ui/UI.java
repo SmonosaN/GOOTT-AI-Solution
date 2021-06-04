@@ -90,7 +90,7 @@ public class UI {
 	
 	public static String genderMenu() {
 		System.out.print("성별을 입력하세요 : ");
-		return Input.inputGenter();
+		return Input.inputGender();
 	}
 	
 	public static String locationMenu() {
