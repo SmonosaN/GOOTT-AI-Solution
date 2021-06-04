@@ -8,6 +8,10 @@ public class User {
 	private String location; // 지역
 	private int time; // 온라인 이용 시간 (시간 단위)
 	
+	public User() {
+		this(0, "", "", 0);
+	}
+	
 	User(int age, String gender, String location, int time) {
 		this.id = Generator.getId();
 		this.age = age;
