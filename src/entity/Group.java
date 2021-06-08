@@ -8,7 +8,7 @@ public abstract class Group {
 	protected String gender; // 성별
 	protected String location; // 지역
 	protected int time; // 이용 시간
-	protected ArrayList<User> userList; // 그룹의 고객 리스트
+	protected ArrayList<User> userList; // User 클래스 => 그룹의 고객 리스트
 	
 	Group(int minAge, int maxAge, String gender, String location, int time) {
 		this.minAge = minAge;

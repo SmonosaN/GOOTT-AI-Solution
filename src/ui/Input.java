@@ -6,14 +6,15 @@ import java.util.regex.Pattern;
 public class Input {
 	final static Scanner INPUT = new Scanner(System.in);
 
-	public static int inputInt(int max) {
+	public static int inputInt(int max) {	// 메뉴 선택 함수, 정수형 max변수 선언
 		try {
-			int input = INPUT.nextInt();
-			if (input < 1 || input > max)
-				throw new Exception("범위는 1부터 " + max + "까지");
+			int input = INPUT.nextInt();	// 정수형 변수 input에 입력받은 INPUT 값을 넣는다.
+			if (input < 1 || input > max)	// 만약 input값이 1보다 작거나 max값보다 크다면
+				throw new Exception("범위는 1부터 " + max + "까지");	
+				// Exception(예외) 처리하고, 메세지를 출력한다. (메뉴 번호는 1~max값 까지)
 			return input;
-		} catch (Exception e) {
-			System.out.println("잘못 입력했습니다. " + e.getMessage());
+		} catch (Exception e) {	// 예외처리 받는 부분
+			System.out.println("잘못 입력했습니다. " + e.getMessage());	// 
 			return -1;
 		}
 	}
@@ -23,12 +24,11 @@ public class Input {
 			String input = INPUT.nextLine();
 			// todo: 정규표현식으로 ideal, likely, defeat 확인하기
 			// 온라인 사용 시간 기준으로 분류
-			// A = 21 ~ , B = 11 ~ 20, C = 1 ~ 10
-			boolean time_checkA = Pattern.matches("\\d{21, }", input);	// ideal
-			boolean time_checkB = Pattern.matches("\\d{11, 20}", input);	// likely
-			boolean time_checkC = Pattern.matches("\\d{1,10}", input);	// defeat
+			boolean time_group = Pattern.matches("\\d", input);
+			// 온라인 사용 시간 값을 정규표현식으로 지정
 			return "";
 		}catch (Exception e) {
+			System.out.println("잘못 입력했습니다. ideal, likely, defect 중에 선택해주세요.");
 			return "";
 		}
 	}
