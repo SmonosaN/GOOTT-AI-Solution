@@ -30,17 +30,16 @@ public class UI {
 		System.out.println();
 		System.out.println("[" + groupName + "]");
 		System.out.println("============================");
-		System.out.println("1. 그룹별 고객 정보 설정 및 수정");
-		System.out.println("2. 그룹별 고객 정보 조회");
+		System.out.println("1. 그룹 정보 설정 및 수정");
+		System.out.println("2. 그룹 정보 조회");
 		System.out.println("3. 뒤로 가기");
 		System.out.println("============================");
 		System.out.print("메뉴 번호를 입력하세요 : ");
 		return Input.inputInt(3);
 	}
 
-	public static int userSettingMenu(int number) {
+	public static int userSettingMenu() {
 		System.out.println();
-		System.out.println(number + " 번째");
 		System.out.println("============================");
 		System.out.println("1. 고객 정보 생성");
 		System.out.println("2. 고객 정보 조회");
@@ -62,6 +61,7 @@ public class UI {
 		System.out.println("5. 온라인 사용 시간");
 		System.out.println("6. 뒤로 가기");
 		System.out.println("============================");
+		System.out.print("메뉴 번호를 입력하세요 : ");
 		return Input.inputInt(6);
 	}
 	
@@ -89,7 +89,7 @@ public class UI {
 	}
 	
 	public static String genderMenu() {
-		System.out.print("성별을 입력하세요 : ");
+		System.out.print("성별을 입력하세요 (man, woman) : ");
 		return Input.inputGender();
 	}
 	
@@ -108,23 +108,18 @@ public class UI {
 		return Input.inputInt(Integer.MAX_VALUE);
 	}
 
-	public static void cusName() {
-		System.out.print("고객의 이름을 입력하세요 : ");
+	public static String nameMenu() {
+		System.out.print("이름을 입력하세요 : ");
+		return Input.inputString();
 	}
 
-	public static void cusAge() {
-		System.out.print("고객의 나이를 입력하세요 : ");
+	public static int ageMenu() {
+		System.out.print("나이를 입력하세요 : ");
+		return Input.inputInt(100);
 	}
-
-	public static void cusGender() {
-		System.out.print("고객의 성별을 입력하세요 : ");
-	}
-
-	public static void cusLocation() {
-		System.out.print("고객의 지역을 입력하세요 : ");
-	}
-
-	public static void cusOnline() {
-		System.out.print("고객의 온라인 사용 시간을 입력하세요 : ");
+	
+	public static int userInfoMenu(int max) {
+		System.out.print("몇 번째 고객 정보입니까? : ");
+		return Input.inputInt(max);
 	}
 }

@@ -1,5 +1,6 @@
 package application;
 
+import java.util.HashMap;
 import entity.*;
 import ui.*;
 import usecase.*;
@@ -12,7 +13,7 @@ public class App {
 	public App() {
 		ideal = new IdealGroup();
 		likey = new LikelyGroup();
-		defect = new DefectGroup(); // °´Ã¼ »ý¼º
+		defect = new DefectGroup();
 	}
 
 	public void run() {

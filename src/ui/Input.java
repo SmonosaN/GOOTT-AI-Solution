@@ -21,11 +21,9 @@ public class Input {
 	
 	public static String inputGroupString() {
 		try {
-			String input = INPUT.nextLine();
+			String input = INPUT.next();
 			// todo: Á¤±ÔÇ¥Çö½ÄÀ¸·Î ideal, likely, defeat È®ÀÎÇÏ±â
-			// ¿Â¶óÀÎ »ç¿ë ½Ã°£ ±âÁØÀ¸·Î ºĞ·ù
-			boolean time_group = Pattern.matches("\\d", input);
-			// ¿Â¶óÀÎ »ç¿ë ½Ã°£ °ªÀ» Á¤±ÔÇ¥Çö½ÄÀ¸·Î ÁöÁ¤
+			
 			return "";
 		}catch (Exception e) {
 			System.out.println("Àß¸ø ÀÔ·ÂÇß½À´Ï´Ù. ideal, likely, defect Áß¿¡ ¼±ÅÃÇØÁÖ¼¼¿ä.");
@@ -34,7 +32,7 @@ public class Input {
 	}
 	public static String inputLocationString() {
 		try {
-			String input = INPUT.nextLine();
+			String input = INPUT.next();
 			boolean location_check = Pattern.matches("\\^[°¡-ÆR{2, 4}]\\s[°¡-ÆR{2, 4}]$", input);
 			return "";
 		} catch (Exception e) {
@@ -45,8 +43,7 @@ public class Input {
 	public static String inputGender() {
 		try {
 			String input = INPUT.next();
-			if (!(input.equals("man") || input.equals("woman")))
-				throw new Exception("man, woman ¸¸ ÀÔ·Â °¡´É");
+			if (!(input.equals("man") || input.equals("woman"))) throw new Exception("man, woman ¸¸ ÀÔ·Â °¡´É");
 			return input;
 		} catch (Exception e) {
 			System.out.println("Àß¸ø ÀÔ·ÂÇß½À´Ï´Ù. " + e.getMessage());
@@ -65,6 +62,7 @@ public class Input {
 		}
 	}
 
+	// ÀÓ½Ã ¸Ş¼Òµå
 	public static String inputString() {
 		String input = INPUT.next();
 		return input;
